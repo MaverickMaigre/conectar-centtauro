@@ -12,7 +12,7 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b1420; /* Fundo azul escuro profundo */
+            background-color: #0b1420;
             color: #ffffff;
             display: flex;
             justify-content: center;
@@ -21,14 +21,14 @@
             overflow: hidden;
             position: relative;
         }
-        /* Banner de fundo oficial com efeito de desfoque */
+        /* Banner de fundo oficial puxado direto do GitHub */
         .background-banner {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://media.discordapp.net/attachments/1177148397719933050/1178168716425429052/Loading_Centauro.gif');
+            background-image: url('banner.gif');
             background-size: cover;
             background-position: center;
             filter: blur(6px) brightness(0.25);
@@ -38,22 +38,22 @@
         .container {
             position: relative;
             z-index: 2;
-            background: rgba(11, 22, 37, 0.85); /* Tom azulado translúcido */
+            background: rgba(11, 22, 37, 0.85);
             padding: 40px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 110, 255, 0.2); /* Brilho neon azul sutil */
-            border: 1px solid rgba(0, 150, 255, 0.2); /* Borda azul interna */
+            box-shadow: 0 8px 32px 0 rgba(0, 110, 255, 0.2);
+            border: 1px solid rgba(0, 150, 255, 0.2);
             max-width: 450px;
             width: 90%;
         }
-        /* Logo oficial em destaque */
+        /* Logo oficial puxada direto do GitHub */
         .logo {
             width: 140px;
             height: 140px;
             border-radius: 50%;
             margin-bottom: 20px;
-            box-shadow: 0 0 25px rgba(0, 150, 255, 0.4); /* Neon azul atrás da logo */
+            box-shadow: 0 0 25px rgba(0, 150, 255, 0.4);
             border: 2px solid rgba(0, 150, 255, 0.3);
         }
         h1 {
@@ -65,17 +65,17 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         p {
-            color: #9cb3cc; /* Texto descritivo em tom azul claro acinzentado */
+            color: #9cb3cc;
             font-size: 16px;
             margin-bottom: 25px;
         }
-        /* Spinner de carregamento personalizado em azul */
+        /* Spinner de carregamento em azul */
         .spinner {
             border: 4px solid rgba(0, 150, 255, 0.1);
             width: 46px;
             height: 46px;
             border-radius: 50%;
-            border-left-color: #0096ff; /* Cor principal do loading em azul */
+            border-left-color: #0096ff;
             animation: spin 1s linear infinite;
             margin: 0 auto 20px auto;
         }
@@ -83,7 +83,7 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        /* Botão de conexão manual estilizado em azul */
+        /* Botão de conexão manual */
         .btn-manual {
             display: inline-block;
             background-color: #0084ff;
@@ -110,7 +110,7 @@
     <div class="background-banner"></div>
 
     <div class="container">
-        <img class="logo" src="https://media.discordapp.net/attachments/1177148397719933050/1486866090557706372/centtaurocity.gif" alt="Centtauro City">
+        <img class="logo" src="logo.gif" alt="Centtauro City">
         
         <h1>Centtauro City</h1>
         <p>Iniciando carregamento dos módulos...</p>
@@ -122,11 +122,10 @@
     </div>
 
     <script>
-        // Dispara o comando de conexão nativa do FiveM após carregar a página visual
         window.onload = function() {
             setTimeout(function() {
                 window.location.href = "fivem://connect/cfx.re/join/kr9bar";
-            }, 1800); // Dá um tempo sutil para ver a animação azul e inicia o jogo
+            }, 1800);
         };
     </script>
 </body>
