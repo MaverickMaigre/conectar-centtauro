@@ -12,7 +12,7 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #152232; /* Cor correspondente ao seu EmbedColor */
+            background-color: #0b1420; /* Fundo azul escuro profundo */
             color: #ffffff;
             display: flex;
             justify-content: center;
@@ -21,7 +21,7 @@
             overflow: hidden;
             position: relative;
         }
-        /* Banner de fundo borrado */
+        /* Banner de fundo oficial com efeito de desfoque */
         .background-banner {
             position: absolute;
             top: 0;
@@ -31,46 +31,51 @@
             background-image: url('https://media.discordapp.net/attachments/1177148397719933050/1178168716425429052/Loading_Centauro.gif');
             background-size: cover;
             background-position: center;
-            filter: blur(8px) brightness(0.3);
+            filter: blur(6px) brightness(0.25);
             z-index: 1;
         }
-        /* Card central contendo as informações */
+        /* Card central do Loading */
         .container {
             position: relative;
             z-index: 2;
-            background: rgba(20, 20, 20, 0.85);
+            background: rgba(11, 22, 37, 0.85); /* Tom azulado translúcido */
             padding: 40px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 110, 255, 0.2); /* Brilho neon azul sutil */
+            border: 1px solid rgba(0, 150, 255, 0.2); /* Borda azul interna */
             max-width: 450px;
             width: 90%;
         }
+        /* Logo oficial em destaque */
         .logo {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 150, 255, 0.4); /* Neon azul atrás da logo */
+            border: 2px solid rgba(0, 150, 255, 0.3);
         }
         h1 {
-            font-size: 24px;
+            font-size: 25px;
             margin-bottom: 10px;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         p {
-            color: #b9bbbe;
+            color: #9cb3cc; /* Texto descritivo em tom azul claro acinzentado */
             font-size: 16px;
             margin-bottom: 25px;
         }
-        /* Animação de Loading (Spinner) */
+        /* Spinner de carregamento personalizado em azul */
         .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            width: 42px;
-            height: 42px;
+            border: 4px solid rgba(0, 150, 255, 0.1);
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
-            border-left-color: #00ff77;
+            border-left-color: #0096ff; /* Cor principal do loading em azul */
             animation: spin 1s linear infinite;
             margin: 0 auto 20px auto;
         }
@@ -78,20 +83,25 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        /* Botão de conexão manual estilizado em azul */
         .btn-manual {
             display: inline-block;
-            background-color: #00ff77;
-            color: #111;
-            padding: 10px 20px;
-            border-radius: 5px;
+            background-color: #0084ff;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
-            transition: 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 132, 255, 0.3);
         }
         .btn-manual:hover {
-            background-color: #00cc5f;
-            transform: scale(1.05);
+            background-color: #0066cc;
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 132, 255, 0.5);
         }
     </style>
 </head>
@@ -102,21 +112,21 @@
     <div class="container">
         <img class="logo" src="https://media.discordapp.net/attachments/1177148397719933050/1486866090557706372/centtaurocity.gif" alt="Centtauro City">
         
-        <h1>Centtauro City RP</h1>
-        <p>Iniciando conexão com a cidade...</p>
+        <h1>Centtauro City</h1>
+        <p>Iniciando carregamento dos módulos...</p>
         
         <div class="spinner"></div>
         
-        <p style="font-size: 13px; color: #888; margin-bottom: 15px;">Se o seu FiveM não abrir automaticamente em instantes, clique no botão abaixo:</p>
-        <a href="fivem://connect/cfx.re/join/kr9bar" class="btn-manual">Abrir FiveM Manualmente</a>
+        <p style="font-size: 13px; color: #627d99; margin-bottom: 15px;">Se o seu FiveM não iniciar a conexão automaticamente, utilize o botão abaixo:</p>
+        <a href="fivem://connect/cfx.re/join/kr9bar" class="btn-manual">Conectar Manualmente</a>
     </div>
 
     <script>
-        // Executa o redirecionamento automático assim que a página carrega
+        // Dispara o comando de conexão nativa do FiveM após carregar a página visual
         window.onload = function() {
             setTimeout(function() {
                 window.location.href = "fivem://connect/cfx.re/join/kr9bar";
-            }, 1500); // Aguarda 1.5 segundos para o usuário ver o loading e depois abre o FiveM
+            }, 1800); // Dá um tempo sutil para ver a animação azul e inicia o jogo
         };
     </script>
 </body>
