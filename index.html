@@ -12,140 +12,50 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Fundo degradê azul escuro premium */
-            background: linear-gradient(135deg, #050b14 0%, #0b1420 50%, #050b14 100%);
+            background-color: #0b1420;
             color: #ffffff;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Alinha o conteúdo começando do topo */
             align-items: center;
             min-height: 100vh;
             overflow-x: hidden;
-            padding: 40px 20px;
+            position: relative;
+            padding: 0;
         }
-        /* Banner ampliado e responsivo no topo */
-        .banner-container {
+        /* ESTILO ANTERIOR: O banner oficial cobre o fundo com desfoque */
+        .background-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 1100px; /* Aumentado para preencher melhor monitores maiores */
-            margin-bottom: -10px; /* Encaixe perfeito com o card de informações */
+            height: 100%;
+            background-image: url('banner.gif');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px) brightness(0.2); /* Efeito cinematográfico de fundo */
+            z-index: 1;
+        }
+        /* NOVO AJUSTE: Espaço amplo e nítido para o Banner no Topo */
+        .top-banner-area {
+            position: relative;
             z-index: 2;
+            width: 100%;
+            max-width: 1000px; /* Limite de largura para não esticar demais */
+            margin-top: 30px;  /* Distância do topo da tela */
+            padding: 0 20px;
             display: flex;
             justify-content: center;
         }
-        .banner-img {
+        .top-banner-area img {
             width: 100%;
             height: auto;
-            max-height: 350px; /* Altura significativamente maior para dar destaque */
-            object-fit: cover; /* Faz com que preencha a área de forma cinematográfica */
-            border-radius: 12px 12px 0 0; /* Arredonda as pontas superiores */
-            box-shadow: 0px 10px 30px rgba(0, 110, 255, 0.25); /* Brilho neon azul sob o banner */
+            max-height: 280px; /* Altura ideal e visível para o topo */
+            object-fit: contain; /* Garante que o banner NUNCA seja cortado */
+            border-radius: 12px;
+            filter: drop-shadow(0px 0px 20px rgba(0, 132, 255, 0.4)); /* Brilho azul sutil */
         }
-        /* Card de informações abaixo do banner */
+        /* Card central de informações (estilo anterior) */
         .container {
             position: relative;
-            z-index: 2;
-            background: rgba(11, 22, 37, 0.96); /* Leve transparência azulada */
-            padding: 40px;
-            border-radius: 0 0 12px 12px; /* Arredonda apenas as pontas inferiores */
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 5px 25px rgba(0, 110, 255, 0.1);
-            border: 1px solid rgba(0, 150, 255, 0.2);
-            border-top: none; /* Remove a emenda visual entre o banner e o card */
-            max-width: 1100px; /* Alinhado exatamente com a largura do banner */
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        /* Alinhamento dos elementos internos do card */
-        .content-block {
-            max-width: 450px;
-            width: 100%;
-        }
-        /* Logo oficial */
-        .logo {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            box-shadow: 0 0 30px rgba(0, 150, 255, 0.4);
-            border: 2px solid rgba(0, 150, 255, 0.3);
-        }
-        h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-        }
-        p {
-            color: #9cb3cc;
-            font-size: 15px;
-            margin-bottom: 25px;
-        }
-        /* Spinner azul de carregamento */
-        .spinner {
-            border: 4px solid rgba(0, 150, 255, 0.1);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border-left-color: #0096ff;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 25px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        /* Botão para abrir manualmente */
-        .btn-manual {
-            display: inline-block;
-            background-color: #0084ff;
-            color: #ffffff;
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0, 132, 255, 0.3);
-        }
-        .btn-manual:hover {
-            background-color: #0066cc;
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(0, 132, 255, 0.5);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="banner-container">
-        <img class="banner-img" src="banner.gif" alt="Centtauro Banner">
-    </div>
-
-    <div class="container">
-        <div class="content-block">
-            <img class="logo" src="logo.gif" alt="Centtauro City">
-            
-            <h1>Centtauro City</h1>
-            <p>Iniciando carregamento dos módulos...</p>
-            
-            <div class="spinner"></div>
-            
-            <p style="font-size: 12px; color: #627d99; margin-bottom: 15px;">Se o seu FiveM não iniciar a conexão automaticamente, utilize o botão abaixo:</p>
-            <a href="fivem://connect/cfx.re/join/kr9bar" class="btn-manual">Conectar Manualmente</a>
-        </div>
-    </div>
-
-    <script>
-        window.onload = function() {
-            setTimeout(function() {
-                window.location.href = "fivem://connect/cfx.re/join/kr9bar";
-            }, 1800);
-        };
-    </script>
-</body>
-</html>
+            z-index:
